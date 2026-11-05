@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "config-merge"
+version = "0.1.0"
+description = "Layered configuration loader with deep merging, provenance, interpolation and validation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "jesuswork60-create" }]
+dependencies = []
+
+[project.scripts]
+configmerge = "configmerge.cli:console_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
