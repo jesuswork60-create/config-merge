@@ -1,0 +1,20 @@
+log_level = { type = "str", choices = ["debug", "info", "warn", "error"], default = "info" }
+
+[server]
+host = "str"
+port = { type = "int", min = 1, max = 65535 }
+allowed_hosts = "list[str]"
+url = "str"
+
+[database]
+host = "str"
+port = { type = "int", min = 1, max = 65535 }
+name = { type = "str", pattern = "[a-z_]+" }
+user = "str"
+password = { type = "str", secret = true }
+dsn = { type = "str", secret = false }
+pool_size = { type = "int", min = 1, default = 5 }
+
+[cache]
+ttl = "str"
+max_size = "str"

@@ -1,0 +1,6 @@
+{
+  "server": {
+    "port": 9000,
+    "allowed_hosts": ["staging.example.com"]
+  }
+}

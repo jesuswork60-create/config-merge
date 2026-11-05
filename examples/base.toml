@@ -1,0 +1,31 @@
+# Settings for a fictional bookshop service.
+
+log_level = "info"
+
+[server]
+host = "0.0.0.0"
+port = 8000
+allowed_hosts = ["shop.example.com"]
+url = "http://${server.host}:${server.port}"
+
+[database]
+host = "db.example.com"
+port = 5432
+name = "bookshop"
+user = "bookshop"
+password = "correct-horse"
+dsn = "postgres://${database.user}:${database.password}@${database.host}:${database.port}/${database.name}"
+
+[cache]
+ttl = "15m"
+max_size = "64MiB"
+
+[profile.dev]
+log_level = "debug"
+
+[profile.dev.server]
+host = "127.0.0.1"
+allowed_hosts = ["localhost"]
+
+[profile.dev.database]
+host = "localhost"
